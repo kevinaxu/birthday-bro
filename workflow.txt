@@ -1,0 +1,17 @@
+Converting from .vcf to well-formatted .txt: 
+- Format of .vcf 
+	BEGIN:VCARD
+	VERSION:2.1
+	N:Matthews;Norman;;;
+	FN:Norman Matthews
+	TEL;CELL;PREF:5167706468
+	END:VCARD
+- Removed all lines that didn't beign with 'FN:' or 'TEL'. 
+- Pasted the lines together: (this didn't really work when i did it) 
+	- 'paste -d , - - < contacts.txt' 
+- Removed the unnecessary substring and replace it with a comma.
+	- "sed -e 's/ TEL;CELL;PREF:/, /' temp.txt" 
+
+- Format of file file:
+	'Norman Matthews, 5167706468
+	Oli Olafson, 9172399649' 
